@@ -10,11 +10,14 @@ namespace Player
     public class Movement : MonoBehaviour
     {
         [SerializeField] private float speed = 7f;
+        [SerializeField] private float climbingSpeed = 9f;
         [SerializeField] private float jumpHeight = 19f;
 
         private const string Horizontal = nameof(Horizontal);
+        private const string Vertical = nameof(Vertical);
         private const string Jump = nameof(Jump);
         private const string Foreground = nameof(Foreground);
+        private const string Ladder = nameof(Ladder);
         private static readonly int IsRunning = Animator.StringToHash(nameof(IsRunning));
         private static readonly int IsClimbing = Animator.StringToHash(nameof(IsClimbing));
 
@@ -22,6 +25,8 @@ namespace Player
         private Transform _transform;
         private Animator _animator;
         private CapsuleCollider2D _collider2D;
+        
+        private float _defaultGravityScale;
 
         private void Start()
         {
@@ -29,14 +34,15 @@ namespace Player
             _transform = transform;
             _animator = GetComponent<Animator>();
             _collider2D = GetComponent<CapsuleCollider2D>();
+
+            _defaultGravityScale = _rigidbody2D.gravityScale;
         }
 
         private void Update()
         {
             Run();
-            
-            if (Input.GetButtonDown(Jump) && _collider2D.IsTouchingLayers(LayerMask.GetMask(Foreground)))
-                JumpOnce();
+            JumpOnce();
+            Climb();
         }
 
         private void Run()
@@ -48,11 +54,33 @@ namespace Player
 
         private void JumpOnce()
         {
-            _rigidbody2D.velocity += new Vector2(0f, jumpHeight);
+            if (Input.GetButtonDown(Jump) && IsTouchingLayers(Foreground))
+                _rigidbody2D.velocity += new Vector2(0f, jumpHeight);
         }
 
+        private void Climb()
+        {
+            if (IsTouchingLayers(Ladder))
+                _rigidbody2D.velocity = new Vector2(_rigidbody2D.velocity.x, GetClimbingSpeed());
+
+            _animator.SetBool(IsClimbing, IsTouchingLayers(Ladder));
+        }
+
+        private bool IsTouchingLayers(params string[] names)
+        {
+            foreach (var layerName in names)
+            {
+                if (_collider2D.IsTouchingLayers(LayerMask.GetMask(layerName)))
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
         private void SwitchAnimation() => _animator.SetBool(IsRunning, GetMovementSpeed() != 0);
         private float GetMovementSpeed() => speed * Input.GetAxis(Horizontal);
+        private float GetClimbingSpeed() => climbingSpeed * Input.GetAxis(Vertical);
         private void SwitchLookDirection()
         {
             if (Mathf.Abs(GetMovementSpeed()) > 0)
