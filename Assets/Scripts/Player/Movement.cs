@@ -8,8 +8,8 @@ namespace Player
     {
         [SerializeField] private float speed = 5f;
 
-        private const string Horizontal = "Horizontal";
-        private static readonly int Speed = Animator.StringToHash("Speed");
+        private const string Horizontal = nameof(Horizontal);
+        private static readonly int IsRunning = Animator.StringToHash(nameof(IsRunning));
         
         private Rigidbody2D _rigidbody2D;
         private Transform _transform;
@@ -34,7 +34,7 @@ namespace Player
             SwitchLookDirection();
         }
 
-        private void SwitchAnimation() => _animator.SetFloat(Speed, Mathf.Abs(GetMovementSpeed()));
+        private void SwitchAnimation() => _animator.SetBool(IsRunning, GetMovementSpeed() != 0);
         private float GetMovementSpeed() => speed * Input.GetAxis(Horizontal);
         private void SwitchLookDirection()
         {
