@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 namespace Player
 {
@@ -9,6 +10,7 @@ namespace Player
     [RequireComponent(typeof(CapsuleCollider2D))]
     public class Movement : MonoBehaviour
     {
+        [Header("Player Settings")]
         [SerializeField] private float speed = 7f;
         [SerializeField] private float climbingSpeed = 9f;
         [SerializeField] private float jumpHeight = 19f;
@@ -25,7 +27,7 @@ namespace Player
         private Transform _transform;
         private Animator _animator;
         private CapsuleCollider2D _collider2D;
-        
+
         private float _defaultGravityScale;
 
         private void Start()
@@ -48,22 +50,31 @@ namespace Player
         private void Run()
         {
             _rigidbody2D.velocity = new Vector2(GetMovementSpeed(), _rigidbody2D.velocity.y);
-            SwitchAnimation();
+            SwitchRunningAnimation();
             SwitchLookDirection();
         }
 
         private void JumpOnce()
         {
             if (Input.GetButtonDown(Jump) && IsTouchingLayers(Foreground))
+            {
                 _rigidbody2D.velocity += new Vector2(0f, jumpHeight);
+            }
         }
 
         private void Climb()
         {
             if (IsTouchingLayers(Ladder))
+            {
                 _rigidbody2D.velocity = new Vector2(_rigidbody2D.velocity.x, GetClimbingSpeed());
+                SetGravityScale(0f);
+            }
+            else
+            {
+                SetGravityScale(_defaultGravityScale);
+            }
 
-            _animator.SetBool(IsClimbing, IsTouchingLayers(Ladder));
+            PlayOrStopClimbingAnimation(Mathf.Abs(GetClimbingSpeed()) > 0 && IsTouchingLayers(Ladder));
         }
 
         private bool IsTouchingLayers(params string[] names)
@@ -78,9 +89,11 @@ namespace Player
 
             return false;
         }
-        private void SwitchAnimation() => _animator.SetBool(IsRunning, GetMovementSpeed() != 0);
+        private void SwitchRunningAnimation() => _animator.SetBool(IsRunning, GetMovementSpeed() != 0);
+        private void PlayOrStopClimbingAnimation(bool b) => _animator.SetBool(IsClimbing, b);
         private float GetMovementSpeed() => speed * Input.GetAxis(Horizontal);
         private float GetClimbingSpeed() => climbingSpeed * Input.GetAxis(Vertical);
+        private void SetGravityScale(float scale) => _rigidbody2D.gravityScale = scale;
         private void SwitchLookDirection()
         {
             if (Mathf.Abs(GetMovementSpeed()) > 0)
