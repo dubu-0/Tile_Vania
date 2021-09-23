@@ -29,6 +29,7 @@ namespace Player
         private CapsuleCollider2D _collider2D;
 
         private float _defaultGravityScale;
+        private bool _isJumping = false;
 
         private void Start()
         {
@@ -56,15 +57,21 @@ namespace Player
 
         private void JumpOnce()
         {
-            if (Input.GetButtonDown(Jump) && IsTouchingLayers(Foreground))
+            if (Input.GetButtonDown(Jump) && IsTouchingLayers(Foreground, Ladder))
             {
                 _rigidbody2D.velocity += new Vector2(0f, jumpHeight);
+                _isJumping = true;
+            }
+
+            if (IsTouchingLayers(Foreground))
+            {
+                _isJumping = false;
             }
         }
 
         private void Climb()
         {
-            if (IsTouchingLayers(Ladder))
+            if (IsTouchingLayers(Ladder) && !_isJumping)
             {
                 _rigidbody2D.velocity = new Vector2(_rigidbody2D.velocity.x, GetClimbingSpeed());
                 SetGravityScale(0f);
