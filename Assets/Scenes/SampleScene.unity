@@ -178,6 +178,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tilemap Grid
       objectReference: {fileID: 0}
+    - target: {fileID: 545424474094910754, guid: e4810638d08623c499b7ab942c07b976, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e4810638d08623c499b7ab942c07b976, type: 3}
 --- !u!1001 &673090263991583040
