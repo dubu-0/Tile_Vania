@@ -10,12 +10,14 @@ GameObject:
   m_Component:
   - component: {fileID: 673090262555122540}
   - component: {fileID: 673090262555122539}
-  - component: {fileID: 673090262555122541}
-  - component: {fileID: 4715160123519771269}
-  - component: {fileID: 5873551552033467443}
-  - component: {fileID: 6531798259176173791}
-  - component: {fileID: 7335090215725589236}
-  - component: {fileID: 1504565340}
+  - component: {fileID: 57171422503550276}
+  - component: {fileID: 593056047251512420}
+  - component: {fileID: 7793826808884881004}
+  - component: {fileID: 3436287659551714565}
+  - component: {fileID: 2904267868450183134}
+  - component: {fileID: 700368261520665166}
+  - component: {fileID: 5130240370470832752}
+  - component: {fileID: 5049018408861221419}
   m_Layer: 3
   m_Name: Player
   m_TagString: Untagged
@@ -88,7 +90,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &673090262555122541
+--- !u!95 &57171422503550276
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
@@ -107,7 +109,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!50 &4715160123519771269
+--- !u!50 &593056047251512420
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -128,7 +130,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!61 &5873551552033467443
+--- !u!61 &7793826808884881004
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -137,7 +139,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 673090262555122535}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: a2201183fc00aad469c1f448f5737192, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -154,7 +156,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.6883631, y: 0.6226034}
   m_EdgeRadius: 0
---- !u!70 &6531798259176173791
+--- !u!70 &3436287659551714565
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -163,14 +165,53 @@ CapsuleCollider2D:
   m_GameObject: {fileID: 673090262555122535}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: a2201183fc00aad469c1f448f5737192, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.044892546, y: -0.41155937}
+  m_Offset: {x: -0.04489255, y: -0.4115594}
   m_Size: {x: 0.6462659, y: 0.1972647}
   m_Direction: 1
---- !u!114 &7335090215725589236
+--- !u!114 &2904267868450183134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 673090262555122535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad7678ce597144de908651f5366888bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 7
+--- !u!114 &700368261520665166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 673090262555122535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f925e9a4eb9410c810094d18789cbe5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpHeight: 19
+--- !u!114 &5130240370470832752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 673090262555122535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd2c05a9967548d584c6127451cd98f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  climbingSpeed: 9
+--- !u!114 &5049018408861221419
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -182,19 +223,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee750cf917d935a4d91c7817b94772b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 7
-  climbingSpeed: 9
-  jumpHeight: 19
---- !u!114 &1504565340
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 673090262555122535}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6115456936b3bf4498fcad7c60587ebd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
   healthPoints: 1
+  afterDeathKickForce: 20

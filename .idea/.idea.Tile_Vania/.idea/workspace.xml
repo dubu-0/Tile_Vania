@@ -8,15 +8,16 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.cinemachine@2.6.10/Runtime/PostProcessing/CinemachinePostProcessing.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/ForegroundChecker.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../Greedy Soldiers/Greedy_Soldiers/Assets/Scripts/Abstract Classes/Enemy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.cinemachine@2.6.10/Runtime/Behaviours/CinemachineStateDrivenCamera.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../Greedy Soldiers/Greedy_Soldiers/Assets/Scripts/Enemy/Troop.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.cinemachine@2.6.10/Runtime/Behaviours/CinemachineConfiner.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/Player.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.cinemachine@2.6.10/Runtime/Core/CinemachineBlenderSettings.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.cinemachine@2.6.10/Runtime/PostProcessing/CinemachinePostProcessing.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../Greedy Soldiers/Greedy_Soldiers/Assets/Scripts/Abstract Classes/Enemy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../Greedy Soldiers/Greedy_Soldiers/Assets/Scripts/Enemy/Troop.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/AD0A7939-8190-48A0-A161-F66558C98867/0b/a63d054f/StateMachineBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/B0E795E4-8CF0-4D7A-9193-EA9447AF406A/ea/68d33ebe/BoxCollider2D.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.cinemachine@2.6.10/Runtime/Behaviours/CinemachineConfiner.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../Greedy Soldiers/Greedy_Soldiers/Assets/Scripts/Enemy/GreenTroop.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -25,14 +26,22 @@
       <option value="$PROJECT_DIR$/Assets/Player.cs" />
       <option value="$PROJECT_DIR$/Assets/Movement.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/Movement.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovement.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/NewBehaviourScript.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Interfaces/IDamageReceiver.cs" />
       <option value="$PROJECT_DIR$/Assets/Test.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Player/Player.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyMovement.cs" />
       <option value="$PROJECT_DIR$/Assets/ForegroundChecker.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Settings/Layers.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Settings/InputAxes.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Settings/InputAxesNames.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Settings/AnimatorParameters.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovement.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerComponents.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerClimbBehaviour.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Player/Player.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerRunBehaviour.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerJumpBehaviour.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1yUcZOHOvvVccm0pbIZSSR2kpS5" />
@@ -59,10 +68,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="17012">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="17012" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -82,7 +91,7 @@
       <workItem from="1632400311834" duration="33282000" />
       <workItem from="1632474102802" duration="1039000" />
       <workItem from="1632494908517" duration="11000" />
-      <workItem from="1632558435866" duration="20439000" />
+      <workItem from="1632558435866" duration="38747000" />
     </task>
     <servers />
   </component>
