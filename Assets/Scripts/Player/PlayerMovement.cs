@@ -9,7 +9,7 @@ namespace Player
     [RequireComponent(typeof(Animator))]
     [RequireComponent(typeof(CapsuleCollider2D))]
     [RequireComponent(typeof(BoxCollider2D))]
-    public class Movement : MonoBehaviour
+    public class PlayerMovement : MonoBehaviour
     {
         [Header("Player Settings")]
         [SerializeField] private float speed = 7f;
@@ -112,5 +112,5 @@ namespace Player
             if (Mathf.Abs(GetMovementSpeed()) > 0)
                 _transform.localScale = new Vector2(Mathf.Sign(GetMovementSpeed()), _transform.localScale.y);
         }
-    }
+    } 
 }
