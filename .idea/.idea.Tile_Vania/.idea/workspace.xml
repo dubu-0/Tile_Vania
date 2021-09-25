@@ -7,6 +7,10 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.cinemachine@2.6.10/Runtime/PostProcessing/CinemachinePostProcessing.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.cinemachine@2.6.10/Runtime/Behaviours/CinemachineConfiner.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
       <option value="$PROJECT_DIR$/Assets/PlayerController.cs" />
@@ -60,7 +64,9 @@
       <updated>1632309663868</updated>
       <workItem from="1632309668888" duration="2299000" />
       <workItem from="1632400311834" duration="33282000" />
-      <workItem from="1632474102802" duration="908000" />
+      <workItem from="1632474102802" duration="1039000" />
+      <workItem from="1632494908517" duration="11000" />
+      <workItem from="1632558435866" duration="3821000" />
     </task>
     <servers />
   </component>

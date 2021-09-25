@@ -8,6 +8,7 @@ namespace Player
     [RequireComponent(typeof(Rigidbody2D))]
     [RequireComponent(typeof(Animator))]
     [RequireComponent(typeof(CapsuleCollider2D))]
+    [RequireComponent(typeof(BoxCollider2D))]
     public class Movement : MonoBehaviour
     {
         [Header("Player Settings")]
@@ -26,8 +27,9 @@ namespace Player
         private Rigidbody2D _rigidbody2D;
         private Transform _transform;
         private Animator _animator;
-        private CapsuleCollider2D _collider2D;
-
+        private CapsuleCollider2D _feetCollider2D;
+        private BoxCollider2D _bodyCollider2D;
+        
         private float _defaultGravityScale;
         private bool _isJumping = false;
 
@@ -36,7 +38,8 @@ namespace Player
             _rigidbody2D = GetComponent<Rigidbody2D>();
             _transform = transform;
             _animator = GetComponent<Animator>();
-            _collider2D = GetComponent<CapsuleCollider2D>();
+            _feetCollider2D = GetComponent<CapsuleCollider2D>();
+            _bodyCollider2D = GetComponent<BoxCollider2D>();
 
             _defaultGravityScale = _rigidbody2D.gravityScale;
         }
@@ -57,13 +60,13 @@ namespace Player
 
         private void JumpOnce()
         {
-            if (Input.GetButtonDown(Jump) && IsTouchingLayers(Foreground, Ladder))
+            if (Input.GetButtonDown(Jump) && IsTouchingLayers(_feetCollider2D, Foreground, Ladder))
             {
                 _rigidbody2D.velocity += new Vector2(0f, jumpHeight);
                 _isJumping = true;
             }
 
-            if (IsTouchingLayers(Foreground))
+            if (IsTouchingLayers(_feetCollider2D, Foreground))
             {
                 _isJumping = false;
             }
@@ -71,7 +74,8 @@ namespace Player
 
         private void Climb()
         {
-            if (IsTouchingLayers(Ladder) && !_isJumping)
+            if ((IsTouchingLayers(_bodyCollider2D, Ladder) || 
+                 IsTouchingLayers(_feetCollider2D, Ladder)) && !_isJumping)
             {
                 _rigidbody2D.velocity = new Vector2(_rigidbody2D.velocity.x, GetClimbingSpeed());
                 SetGravityScale(0f);
@@ -81,14 +85,14 @@ namespace Player
                 SetGravityScale(_defaultGravityScale);
             }
 
-            PlayOrStopClimbingAnimation(Mathf.Abs(GetClimbingSpeed()) > 0 && IsTouchingLayers(Ladder));
+            PlayOrStopClimbingAnimation(IsPlayerClimbing());
         }
 
-        private bool IsTouchingLayers(params string[] names)
+        private bool IsTouchingLayers(Collider2D playerCollider2D, params string[] layersNames)
         {
-            foreach (var layerName in names)
+            foreach (var layerName in layersNames)
             {
-                if (_collider2D.IsTouchingLayers(LayerMask.GetMask(layerName)))
+                if (playerCollider2D.IsTouchingLayers(LayerMask.GetMask(layerName)))
                 {
                     return true;
                 }
@@ -100,6 +104,8 @@ namespace Player
         private void PlayOrStopClimbingAnimation(bool b) => _animator.SetBool(IsClimbing, b);
         private float GetMovementSpeed() => speed * Input.GetAxis(Horizontal);
         private float GetClimbingSpeed() => climbingSpeed * Input.GetAxis(Vertical);
+        private bool IsPlayerClimbing() =>
+            Mathf.Abs(GetClimbingSpeed()) > 0 && IsTouchingLayers(_bodyCollider2D, Ladder);
         private void SetGravityScale(float scale) => _rigidbody2D.gravityScale = scale;
         private void SwitchLookDirection()
         {
