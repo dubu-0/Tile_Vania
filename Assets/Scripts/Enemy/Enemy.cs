@@ -9,6 +9,7 @@ namespace Enemy
 
         private void OnCollisionEnter2D(Collision2D other)
         {
+            other.gameObject.GetComponent<Player.Player>()?.KickPlayer();
             other.gameObject.GetComponent<IDamageReceiver>()?.TakeDamage(damagePoints);
         }
     }

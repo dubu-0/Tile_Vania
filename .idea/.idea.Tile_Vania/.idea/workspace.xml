@@ -18,6 +18,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/B0E795E4-8CF0-4D7A-9193-EA9447AF406A/ea/68d33ebe/BoxCollider2D.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.cinemachine@2.6.10/Runtime/Behaviours/CinemachineConfiner.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../Greedy Soldiers/Greedy_Soldiers/Assets/Scripts/Enemy/GreenTroop.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Hazards/Water.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
@@ -49,17 +50,20 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Settings/AxisNameHandler.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Settings/ButtonNameHandler.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Settings/AnimatorParameterHandler.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Settings/ButtonNameCollection.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Settings/AnimatorParameterCollection.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Settings/AxisNameCollection.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerRunComponent.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerComponentCollection.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/ForegroundChecker.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Player/Player.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Settings/LayerCollection.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerClimbComponent.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerJumpComponent.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerComponentCollection.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Hazards/Spike.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Hazards/Spikes.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Player/Player.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Hazards/Water.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1yUcZOHOvvVccm0pbIZSSR2kpS5" />
@@ -110,7 +114,7 @@
       <workItem from="1632474102802" duration="1039000" />
       <workItem from="1632494908517" duration="11000" />
       <workItem from="1632558435866" duration="38990000" />
-      <workItem from="1632648885882" duration="20421000" />
+      <workItem from="1632648885882" duration="25560000" />
     </task>
     <servers />
   </component>

@@ -1,8 +1,10 @@
+using System;
 using System.Collections;
 using Interfaces;
 using Settings;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Random = UnityEngine.Random;
 
 namespace Player
 {
@@ -22,17 +24,21 @@ namespace Player
         {
             if (healthPoints > 0) return false;
             
-            Die();
             PreventMovement();
-            TakeKickAfterDeath();
-
+            KillPlayer();
+            
             return true;
         }
 
-        private void Die() => 
-            PlayerComponentCollection.Animator.SetBool(AnimatorParameterCollection.IsDead, true);
-        private void TakeKickAfterDeath() =>
+        public void KickPlayer() => 
             PlayerComponentCollection.Rigidbody2D.velocity += GetRandomDirection() * AfterDeathKickForce;
+
+        private void KillPlayer()
+        {
+            PlayerComponentCollection.Animator.SetBool(AnimatorParameterCollection.IsDead, true);
+            PlayerComponentCollection.Player.enabled = false;
+        }
+        
         private void PreventMovement()
         {
             PlayerComponentCollection.RunComponent.enabled = false;
