@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 700368261520665166}
   - component: {fileID: 5130240370470832752}
   - component: {fileID: 5049018408861221419}
+  - component: {fileID: 3817838036855338731}
   m_Layer: 3
   m_Name: Player
   m_TagString: Untagged
@@ -225,3 +226,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthPoints: 1
   afterDeathKickForce: 20
+--- !u!114 &3817838036855338731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 673090262555122535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dac46023ed79c541a47a46ad3fa7f05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

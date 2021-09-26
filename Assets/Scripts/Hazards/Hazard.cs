@@ -1,9 +1,9 @@
 using Interfaces;
 using UnityEngine;
 
-namespace Enemy
+namespace Hazards
 {
-    public class Enemy : MonoBehaviour
+    public class Hazard : MonoBehaviour
     {
         [SerializeField] private int damagePoints = 1;
 

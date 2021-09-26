@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1657246415}
-  - component: {fileID: 1657246416}
   - component: {fileID: 4196308912497078891}
-  m_Layer: 9
+  - component: {fileID: 1657246416}
+  m_Layer: 10
   m_Name: Foreground Checker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26,24 +26,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1657246414}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.429, y: 0.0243, z: 0}
+  m_LocalPosition: {x: 0.441, y: 0.0243, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 9083772746960054081}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1657246416
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1657246414}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f506d4fd0a35ea40bf8ec2c47b67a9c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &4196308912497078891
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -54,7 +42,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.55358696}
@@ -70,6 +58,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.003, y: 0.112932205}
   m_EdgeRadius: 0
+--- !u!114 &1657246416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1657246414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f506d4fd0a35ea40bf8ec2c47b67a9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &9083772746960054083
 GameObject:
   m_ObjectHideFlags: 0

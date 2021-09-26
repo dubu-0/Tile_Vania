@@ -1,9 +1,6 @@
-﻿using System;
-using UnityEngine;
-
-namespace Settings
+﻿namespace Settings
 {
-    public class InputAxesNames : ScriptableObject
+    public static class AxisNameCollection
     {
         public static string Horizontal => nameof(Horizontal);
         public static string Vertical => nameof(Vertical);
