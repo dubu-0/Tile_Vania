@@ -15,7 +15,7 @@ namespace Player
             _defaultGravityScale = PlayerComponentCollection.Rigidbody2D.gravityScale;
         }
 
-        private void OnTriggerEnter(Collider other)
+        private void OnTriggerStay2D(Collider2D other)
         {
             if (IsPlayerTouchingLadder())
             {
@@ -25,6 +25,12 @@ namespace Player
             {
                 PlayerComponentCollection.Rigidbody2D.gravityScale = _defaultGravityScale;
             }
+        }
+
+        private void OnTriggerExit2D(Collider2D other)
+        {
+            PlayerComponentCollection.Rigidbody2D.gravityScale = _defaultGravityScale;
+            PlayerComponentCollection.Animator.SetBool(AnimatorParameterCollection.IsClimbing, IsPlayerClimbing());
         }
 
         private void Climb()

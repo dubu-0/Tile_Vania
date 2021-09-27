@@ -8,15 +8,15 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.cinemachine@2.6.10/Runtime/Behaviours/CinemachineStateDrivenCamera.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.cinemachine@2.6.10/Runtime/Core/CinemachineBlenderSettings.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.cinemachine@2.6.10/Runtime/PostProcessing/CinemachinePostProcessing.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.cinemachine@2.6.10/Runtime/Behaviours/CinemachineStateDrivenCamera.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../Greedy Soldiers/Greedy_Soldiers/Assets/Scripts/Abstract Classes/Enemy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../Greedy Soldiers/Greedy_Soldiers/Assets/Scripts/Enemy/Troop.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/AD0A7939-8190-48A0-A161-F66558C98867/0b/a63d054f/StateMachineBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/B0E795E4-8CF0-4D7A-9193-EA9447AF406A/ea/68d33ebe/BoxCollider2D.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.cinemachine@2.6.10/Runtime/Behaviours/CinemachineConfiner.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.cinemachine@2.6.10/Runtime/Core/CinemachineBlenderSettings.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../Greedy Soldiers/Greedy_Soldiers/Assets/Scripts/Enemy/GreenTroop.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Hazards/Water.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -56,7 +56,6 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerRunComponent.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/ForegroundChecker.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Settings/LayerCollection.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerClimbComponent.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerJumpComponent.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerComponentCollection.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Hazards/Spike.cs" />
@@ -64,6 +63,7 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/Player.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Hazards/Water.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerClimbComponent.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1yUcZOHOvvVccm0pbIZSSR2kpS5" />
@@ -90,10 +90,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="976">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="976" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -115,6 +115,7 @@
       <workItem from="1632494908517" duration="11000" />
       <workItem from="1632558435866" duration="38990000" />
       <workItem from="1632648885882" duration="25560000" />
+      <workItem from="1632741157366" duration="1102000" />
     </task>
     <servers />
   </component>
