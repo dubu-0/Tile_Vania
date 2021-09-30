@@ -17,7 +17,7 @@ TagManager:
   - Enemy
   - Foreground Checker
   - Spikes
-  - Water
+  - 
   - 
   - 
   - 
@@ -38,12 +38,21 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Background Tiles
+  - name: Background
     uniqueID: 4128427805
     locked: 0
-  - name: Foreground Tiles
+  - name: Foreground
     uniqueID: 4012018281
+    locked: 0
+  - name: Water
+    uniqueID: 1769385197
     locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Coins
+    uniqueID: 3907754777
+    locked: 0
+  - name: Enemy
+    uniqueID: 2745679491
     locked: 0

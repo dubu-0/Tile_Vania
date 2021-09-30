@@ -1,5 +1,5 @@
 ﻿using System;
-using Settings;
+using Collections;
 using UnityEngine;
 
 namespace Player
@@ -15,7 +15,7 @@ namespace Player
             _defaultGravityScale = PlayerComponentCollection.Rigidbody2D.gravityScale;
         }
 
-        private void OnTriggerStay2D(Collider2D other)
+        private void Update()
         {
             if (IsPlayerTouchingLadder())
             {
@@ -24,13 +24,8 @@ namespace Player
             else
             {
                 PlayerComponentCollection.Rigidbody2D.gravityScale = _defaultGravityScale;
+                PlayerComponentCollection.Animator.SetBool(AnimatorParameters.IsClimbing, IsPlayerClimbing());
             }
-        }
-
-        private void OnTriggerExit2D(Collider2D other)
-        {
-            PlayerComponentCollection.Rigidbody2D.gravityScale = _defaultGravityScale;
-            PlayerComponentCollection.Animator.SetBool(AnimatorParameterCollection.IsClimbing, IsPlayerClimbing());
         }
 
         private void Climb()
@@ -39,16 +34,12 @@ namespace Player
                 new Vector2(PlayerComponentCollection.Rigidbody2D.velocity.x, GetClimbingSpeed());
             
             PlayerComponentCollection.Rigidbody2D.gravityScale = 0f;
-            PlayerComponentCollection.Animator.SetBool(AnimatorParameterCollection.IsClimbing, IsPlayerClimbing());
+            PlayerComponentCollection.Animator.SetBool(AnimatorParameters.IsClimbing, IsPlayerClimbing());
         }
 
-        private bool IsPlayerJumping() => 
-            PlayerComponentCollection.Animator.GetBool(AnimatorParameterCollection.IsJumping);
-
         private bool IsPlayerTouchingLadder() =>
-            (PlayerComponentCollection.BodyCollider2D.IsTouchingLayers(LayerCollection.Ladder) ||
-             PlayerComponentCollection.FeetCollider2D.IsTouchingLayers(LayerCollection.Ladder)) &&
-            !IsPlayerJumping();
+            PlayerComponentCollection.BodyCollider2D.IsTouchingLayers(LayerCollection.Ladder) ||
+             PlayerComponentCollection.FeetCollider2D.IsTouchingLayers(LayerCollection.Ladder);
 
         private float GetClimbingSpeed() => climbingSpeed * Input.GetAxis(AxisNameCollection.Vertical);
 

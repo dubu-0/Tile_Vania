@@ -1,4 +1,5 @@
-﻿using Settings;
+﻿using System;
+using Collections;
 using UnityEngine;
 
 namespace Player
@@ -7,7 +8,9 @@ namespace Player
     {
         [SerializeField] protected float speed = 7f;
 
-        private void FixedUpdate()
+        private Vector2 _lookDirection = new Vector2(1, 1);
+        
+        private void LateUpdate()
         {
             Run();
         }
@@ -19,15 +22,19 @@ namespace Player
             SwitchRunningAnimation();
             SwitchLookDirection();
         }
-    
+
         private float GetMovementSpeed() => speed * Input.GetAxis(AxisNameCollection.Horizontal);
         private void SwitchRunningAnimation() => 
             PlayerComponentCollection.Animator.SetBool(
-                AnimatorParameterCollection.IsRunning, GetMovementSpeed() != 0);
+                AnimatorParameters.IsRunning, GetMovementSpeed() != 0);
         private void SwitchLookDirection()
         {
             if (Mathf.Abs(GetMovementSpeed()) > 0)
-                transform.localScale = new Vector2(Mathf.Sign(GetMovementSpeed()), transform.localScale.y);
+            {
+                _lookDirection = new Vector2(Mathf.Sign(GetMovementSpeed()), transform.localScale.y);
+            }
+            
+            transform.localScale = _lookDirection;
         }
     }
 }

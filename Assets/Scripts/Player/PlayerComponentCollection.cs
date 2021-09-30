@@ -12,13 +12,13 @@ namespace Player
     [RequireComponent(typeof(PlayerRunComponent))]
     [RequireComponent(typeof(PlayerJumpComponent))]
     [RequireComponent(typeof(PlayerClimbComponent))]
-    public sealed class PlayerComponentCollection : MonoBehaviour
+    public class PlayerComponentCollection : MonoBehaviour
     {
         private PlayerComponentCollection() { }
         
         public static SpriteRenderer SpriteRenderer { get; private set; }
-        public static BoxCollider2D BodyCollider2D { get; private set; }
-        public static CapsuleCollider2D FeetCollider2D { get; private set; }
+        public static CapsuleCollider2D BodyCollider2D { get; private set; }
+        public static BoxCollider2D FeetCollider2D { get; private set; }
         public static Rigidbody2D Rigidbody2D { get; private set; }
         public static Animator Animator { get; private set; } 
         public static Player Player { get; private set; }
@@ -30,8 +30,8 @@ namespace Player
         {
             Player = GetComponent<Player>();
             SpriteRenderer = GetComponent<SpriteRenderer>();
-            BodyCollider2D = GetComponent<BoxCollider2D>();
-            FeetCollider2D = GetComponent<CapsuleCollider2D>();
+            BodyCollider2D = GetComponent<CapsuleCollider2D>();
+            FeetCollider2D = GetComponent<BoxCollider2D>();
             Rigidbody2D = GetComponent<Rigidbody2D>();
             Animator = GetComponent<Animator>();
             RunComponent = GetComponent<PlayerRunComponent>();

@@ -1,4 +1,4 @@
-﻿using Settings;
+﻿using Collections;
 using UnityEngine;
 
 namespace Player
@@ -9,25 +9,25 @@ namespace Player
 
         private void Update()
         {
-            if (IsPlayerStandingOnGround())
-                PlayerComponentCollection.Animator.SetBool(AnimatorParameterCollection.IsJumping, false);
+            if (IsPlayerStandingOnGround() || IsPlayerStandingOnLadder())
+                PlayerComponentCollection.Animator.SetBool(AnimatorParameters.IsJumping, false);
 
             if (Input.GetButtonDown(ButtonNameCollection.Jump))
-                if ((IsPlayerStandingOnLadder() || IsPlayerStandingOnGround()) && !IsPlayerJumping())
+                if (IsPlayerStandingOnGround() && !IsPlayerJumping())
                     Jump();
         }
         
         private void Jump()
         {
             PlayerComponentCollection.Rigidbody2D.velocity = new Vector2(0f, jumpHeight);
-            PlayerComponentCollection.Animator.SetBool(AnimatorParameterCollection.IsJumping, true);
+            PlayerComponentCollection.Animator.SetBool(AnimatorParameters.IsJumping, true);
         }
 
         private static bool IsPlayerStandingOnGround() => 
             PlayerComponentCollection.FeetCollider2D.IsTouchingLayers(LayerCollection.Foreground);
 
         private bool IsPlayerJumping() => 
-            PlayerComponentCollection.Animator.GetBool(AnimatorParameterCollection.IsJumping);
+            PlayerComponentCollection.Animator.GetBool(AnimatorParameters.IsJumping);
 
         private bool IsPlayerStandingOnLadder() =>
             PlayerComponentCollection.FeetCollider2D.IsTouchingLayers(LayerCollection.Ladder);
